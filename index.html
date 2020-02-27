@@ -1,6 +1,19 @@
-<script src="https://apis.google.com/js/platform.js" async defer></script>
-<script src="auth.js"></script>
+<html>
+<head>
 <meta name="google-signin-client_id" content="164244505738-o2o4v5ugo0q8urrfu3egjdr5nik5ehsu.apps.googleusercontent.com">
-<div id="smol"></div>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+</head>
+<body>
+<div id="smol">test</div>
 <div id="smol2">bruh</div>
 <div class="g-signin2" data-onsuccess="onSignIn"></div>
+<script type="text/javascript">
+        function onSignIn(googleUser)
+		{
+			var id_token = googleUser.getAuthResponse().id_token;
+			document.getElementById("smol2").innerHTML = id_token;
+            console.log("Succesfully Singed in!!!");
+        }
+</script>
+</body>
+</html>
