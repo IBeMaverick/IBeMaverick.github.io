@@ -2,9 +2,11 @@
 <meta name="google-signin-client_id" content="164244505738-o2o4v5ugo0q8urrfu3egjdr5nik5ehsu.apps.googleusercontent.com">
 <div class="g-signin2" data-onsuccess="onSignIn"></div>
 <div id="smol"></div>
+<div id="smol2"></div>
 <script>
 function onSignIn(googleUser) {
 	var profile = googleUser.getAuthResponse(true);
 	document.getElementById("smol").innerHTML = profile.id_token;
+	document.getElementById("smol2").innerHTML = "bruh";
 }
 </script>
