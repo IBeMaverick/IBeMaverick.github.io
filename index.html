@@ -12,7 +12,13 @@
 		{
 			var id_token = googleUser.getAuthResponse().id_token;
 			const socket = new WebSocket('ws://localhost:8887');
-			socket.send(id_token);
+			
+			socket.addEventListener('open', function (event)
+			{
+				socket.send('id_token');
+			});
+			
+			
 			document.getElementById("smol2").innerHTML = id_token;
         }
 </script>
