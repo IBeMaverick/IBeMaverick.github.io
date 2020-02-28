@@ -11,8 +11,8 @@
         function onSignIn(googleUser)
 		{
 			var id_token = googleUser.getAuthResponse().id_token;
-			var exampleSocket = new WebSocket("wss://localhost:8887");
-			exampleSocket.send(id_token);
+			const socket = new WebSocket('ws://localhost:8887');
+			socket.send(id_token);
 			document.getElementById("smol2").innerHTML = id_token;
         }
 </script>
